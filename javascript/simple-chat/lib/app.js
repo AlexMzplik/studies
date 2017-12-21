@@ -1,9 +1,2 @@
-import express from "express";
-import http from "http";
-
-const app = express();
-const server = http.Server(app);
-const port = 3000;
-server.listen(port, () => {
-  console.log(`Simple chat started at ${port}`);
-});
+"use strict";var _express=require("express"),_express2=_interopRequireDefault(_express),_http=require("http"),_http2=_interopRequireDefault(_http),_bodyParser=require("body-parser"),_bodyParser2=_interopRequireDefault(_bodyParser);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var app=(0,_express2.default)(),server=_http2.default.Server(app),port=3e3;server.listen(port,function(){console.log("Simple chat started at "+port)});
+//# sourceMappingURL=app.js.map
