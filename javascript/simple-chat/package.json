@@ -7,14 +7,16 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel lib/ --out-dir dist/ --source-maps inline",
-    "dev": "nodemon --exec npm run babel-node -- lib/app.js",
-    "start": "node dist/app.js"
+    "test": "mocha --compilers js:babel-register --recursive ./test/",
+    "build": "babel source/ --out-dir lib/ --source-maps",
+    "build-inline": "babel source/ --out-dir lib/ --source-maps inline",
+    "dev": "nodemon source/app.js --exec babel-node",
+    "start": "node lib/app.js"
   },
   "author": "Alexandre vaz",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "socket.io": "^2.0.4"
   },
@@ -23,6 +25,9 @@
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-minify": "^0.2.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "mocha": "^4.0.1",
     "nodemon": "^1.14.1"
   }
 }
