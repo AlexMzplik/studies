@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "mocha --compilers js:babel-register --recursive ./test/",
+   "test": "npm run build && mocha --require babel-core/register",
+    "test-all": "npm run build && mocha --require babel-core/register --recursive ./test/",
     "build": "babel source/ --out-dir lib/ --source-maps",
     "build-inline": "babel source/ --out-dir lib/ --source-maps inline",
     "dev": "nodemon source/app.js --exec babel-node",
@@ -26,7 +27,6 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-minify": "^0.2.0",
     "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "^6.26.0",
     "mocha": "^4.0.1",
     "nodemon": "^1.14.1"
   }
